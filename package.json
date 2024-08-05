@@ -1,0 +1,25 @@
+{
+  "name": "lightweight-cron",
+  "version": "1.0.0",
+  "description": "In-process cron scheduler that accepts a job and executes it periodically.",
+  "main": "main.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "NODE_ENV=development nodemon --max-old-space-size=4096 main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VeroZaki/lightweight-cron.git"
+  },
+  "author": "Veronia Osama",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VeroZaki/lightweight-cron/issues"
+  },
+  "homepage": "https://github.com/VeroZaki/lightweight-cron#readme",
+  "dependencies": {
+    "mongoose": "^8.5.2",
+    "shortid": "^2.2.16"
+  }
+}
