@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "NODE_ENV=development nodemon --max-old-space-size=4096 main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=testing mocha './testCases/**/*.test.js' --recursive --timeout 100000 --exit"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "lodash": "^4.17.21",
+    "mocha": "^10.7.0",
     "mongoose": "^8.5.2",
     "shortid": "^2.2.16",
     "winston": "^3.13.1"
