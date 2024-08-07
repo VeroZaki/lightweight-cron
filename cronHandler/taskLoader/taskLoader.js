@@ -65,7 +65,7 @@ class TaskLoader {
       queueName: task.queue.name,
     };
     logger.info(`Registering task: ${taskName} with job reference: ${JSON.stringify(jobReference)}`);
-    await ModelManager.use(TASKS_SCHEMA).updateMany({ TaskName: taskName }, { jobReference });
+    await ModelManager.use(TASKS_SCHEMA).updateMany({ taskName: taskName }, { jobReference });
   }
 }
 
