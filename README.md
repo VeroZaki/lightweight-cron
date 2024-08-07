@@ -78,20 +78,16 @@ You can add a task by sending a POST request to the following endpoint:
 ##Postman Documentation
 For a complete overview of the API endpoints and their usage, refer to the Postman Documentation.
 
-<style>
-  .button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #007bff;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    border: none;
-  }
-</style>
-<a href="https://documenter.getpostman.com/view/37433771/2sA3rzLYxz" class="button">View Postman Documentation</a>
-
+<a href="https://documenter.getpostman.com/view/37433771/2sA3rzLYxz" style="
+display: inline-block;
+padding: 10px 20px;
+font-size: 16px;
+font-weight: bold;
+color: #fff;
+background-color: #007bff;
+text-align: center;
+text-decoration: none;
+border-radius: 5px;
+border: none;
+">View Postman Documentation</a>
 
