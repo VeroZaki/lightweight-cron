@@ -46,6 +46,10 @@ BullMQ provides several features that are essential for achieving our goal:
     ```bash
     npm start
     ```
+5. **Running test cases**:
+    ```bash
+    npm run test
+    ```
 
 ## API Endpoints
 
