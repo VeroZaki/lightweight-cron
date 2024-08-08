@@ -46,10 +46,55 @@ BullMQ provides several features that are essential for achieving our goal:
     ```bash
     npm start
     ```
-5. **Running test cases**:
+
+5. **Running Test Cases**:
     ```bash
     npm run test
     ```
+
+## Integrating Tasks
+
+After adding a job through the API, you need to define and configure your tasks. Follow these steps:
+
+1. **Update `tasks/index.js`**:
+
+    You need to import your task classes and export them so that the scheduler can use them. Add the following code to `tasks/index.js`:
+
+    ```js
+    import Task1 from './task1/index.js';
+    import Task3 from './repeatable/task3/index.js';
+    import Task2 from './repeatable/task2/index.js';
+
+    export default {
+      Task1_runner: Task1,
+      Task3: Task3,
+      Task2: Task2
+    };
+    ```
+
+2. **Define Your Task File**:
+
+    Create a file for each task and define its behavior. For example, for `Task3`, create a file at `tasks/repeatable/task3/index.js`:
+
+    ```js
+    class Task3 {
+      run(args) {
+        console.log('holaaaaaaaaaaaaaaaaa Task 3', args);
+        return `Hello ${args}`;
+      }
+    
+      run2(args) {
+        // console.log('holaaaaaaaaaaaaaaaaa222', args);
+        return `Hello2 ${args}`;
+      }
+    }
+    
+    export default new Task3();
+    ```
+
+3. **Ensure Task Files Are Properly Organized**:
+
+    Make sure your task files are organized in the `tasks` directory according to the imports specified in `tasks/index.js`.
 
 ## API Endpoints
 
@@ -76,8 +121,6 @@ You can add a task by sending a POST request to the following endpoint:
     "isAsync": false
 }
 ```
-
-
 
 ## Postman Documentation
 For a complete overview of the API endpoints and their usage, refer to the Postman Documentation.
