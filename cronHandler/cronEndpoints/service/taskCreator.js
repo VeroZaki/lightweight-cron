@@ -64,7 +64,7 @@ class TaskCreator {
   }
 
   async checkIfTaskExists(taskName) {
-    const task = await Task.findOne({ TaskName: taskName });
+    const task = await Task.findOne({ taskName: taskName });
     return (!_.isNil(task));
   }
 }

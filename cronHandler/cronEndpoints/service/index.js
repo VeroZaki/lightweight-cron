@@ -1,4 +1,5 @@
 import { DEFAULT_QUEUE_NAME } from '../../../common/constants.js';
+import logger from '../../../lib/winston.js';
 import taskCreator from '../../cronEndpoints/service/taskCreator.js';
 import TaskQueue from '../../queues/queue.js';
 
@@ -17,14 +18,14 @@ class TaskService {
 
 async removeJob(jobId) {
     try {
-      console.log(`Attempting to remove job with ID: ${jobId}`);
+      logger.info(`Attempting to remove job with ID: ${jobId}`);
       const job = await this.queue.queue.getJob(jobId);
       if (job) {
-        console.log('Job found:', job);
+        logger.info('Job found:', job);
         await job.remove();
-        console.log(`Job with ID: ${jobId} has been removed.`);
+        logger.info(`Job with ID: ${jobId} has been removed.`);
       } else {
-        console.log(`Job with ID: ${jobId} not found.`);
+        logger.info(`Job with ID: ${jobId} not found.`);
       }
     } catch (error) {
       console.error(`Error removing job with ID: ${jobId}`, error);
