@@ -36,7 +36,6 @@ class TaskController {
     await ModelManager.use(TASKS_SCHEMA).updateOne({_id: task._id}, { isExecutable: false });
 
     const jobId = task.jobReference.jobId;
-    console.log('jobId:', jobId)
     await TaskService.removeJob(jobId);
     return res.status(200).json({ success: true, message: 'Task stopped successfully' });
   }
